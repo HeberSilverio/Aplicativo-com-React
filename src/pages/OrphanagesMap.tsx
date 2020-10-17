@@ -20,7 +20,7 @@ function OrphanagesMap() {
     const [orphanages, setOrphanages] = useState<Orphanage[]>([]);
 
     useEffect(() => {
-        api.get('orphanage').then(response => {
+        api.get('orphanages').then(response => {
            setOrphanages(response.data);
         });
     }, []);
@@ -46,8 +46,9 @@ function OrphanagesMap() {
                 zoom={15}
                 style={{ width: '100%', height: '100%' }}
                 >
-                    <TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                    
+                   <TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" /> 
+                  
+
                 {orphanages.map(orphanage => {
                    return (
                         <Marker

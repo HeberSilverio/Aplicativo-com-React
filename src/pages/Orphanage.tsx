@@ -6,9 +6,31 @@ import { Map, Marker, TileLayer } from "react-leaflet";
 import Sidebar from "../components/Sidebar";
 import mapIcon from "../utils/mapIcon";
 
+import { useState } from "react-leaflet/node_modules/@types/react";
+import { useEffect } from "react-leaflet/node_modules/@types/react";
+import api from "../services/api";
+
 import '../styles/pages/orphanage.css';
 
+interface Orphanage {
+  latitude: number;
+  longitude: number;
+  name: string;
+  description: string;
+  instructions: string;
+  opening_hours: string;
+  open_on_weekends: string;
+}
+
 export default function Orphanage() {
+  const [orphanages, setOrphanages] = useState<Orphanage[]>([]);
+
+  useEffect(() => {
+      api.get('orphanages').then(response => {
+         setOrphanages(response.data);
+      });
+  }, []);
+  
   return (
     <div id="page-orphanage">
     <Sidebar/>
