@@ -1,13 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { FiClock, FiInfo } from "react-icons/fi";
 import { Map, Marker, TileLayer } from "react-leaflet";
 
 import Sidebar from "../components/Sidebar";
 import mapIcon from "../utils/mapIcon";
-
-import { useState } from "react-leaflet/node_modules/@types/react";
-import { useEffect } from "react-leaflet/node_modules/@types/react";
 import api from "../services/api";
 
 import '../styles/pages/orphanage.css';
@@ -25,11 +22,11 @@ interface Orphanage {
 export default function Orphanage() {
   const [orphanages, setOrphanages] = useState<Orphanage[]>([]);
 
-  useEffect(() => {
-      api.get('orphanages').then(response => {
-         setOrphanages(response.data);
-      });
-  }, []);
+    useEffect(() => {
+        api.get('orphanages').then(response => {
+           setOrphanages(response.data);
+        });
+    }, []);
   
   return (
     <div id="page-orphanage">
