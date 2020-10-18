@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FaWhatsapp } from "react-icons/fa";
+
 import { FiClock, FiInfo } from "react-icons/fi";
 import { Map, Marker, TileLayer } from "react-leaflet";
 import { useParams } from 'react-router-dom';
@@ -58,7 +58,7 @@ export default function Orphanage() {
              return (
               <button 
                 key={image.id} 
-                className={activeImageIndex == index ? 'active' : ''} 
+                className={activeImageIndex === index ? 'active' : ''} 
                 type="button"
                 onClick={() => {
                   setActiveImageIndex(index);
@@ -88,9 +88,10 @@ export default function Orphanage() {
                 scrollWheelZoom={false}
                 doubleClickZoom={false}
               >
-                <TileLayer 
+                <TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+               <TileLayer 
                   url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
-                />
+                /> 
                 <Marker interactive={false} icon={mapIcon} position={[orphanage.latitude, orphanage.longitude]} />
               </Map>
 
