@@ -3,6 +3,7 @@
         "typeorm"
     ],
     "cSpell.words": [
-        "MAPBOX"
+        "MAPBOX",
+        "callout"
     ]
 }

@@ -196,4 +196,3 @@ export default function OrphanagesMap() {
   );
 }
 
-// return `https://a.tile.openstreetmap.org/${z}/${x}/${y}.png`;
