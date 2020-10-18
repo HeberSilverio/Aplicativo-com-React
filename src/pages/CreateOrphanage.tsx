@@ -11,11 +11,10 @@ import api from "../services/api";
 
 import '../styles/pages/create-orphanage.css';
 
-
-export default function CreateOrphanage() {
+export default function OrphanagesMap() {
   const history = useHistory();
 
-  const [position, setPosition] = useState({ latitude: 0, longitude: 0 })
+  const [position, setPosition] = useState({ latitude: 0, longitude: 0 });
 
   const [name, setName] = useState('');
   const [about, setAbout] = useState('');
@@ -68,9 +67,9 @@ export default function CreateOrphanage() {
       data.append('images', image);
     })
 
-    await api.post('/orphanages', data); 
+    await api.post('orphanages', data); 
 
-    alert('Cadastro realizado com sucesso!');
+    alert("Cadastro realizado com sucesso!");
 
     history.push('/app');
   }
