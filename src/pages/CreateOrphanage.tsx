@@ -33,6 +33,8 @@ export default function OrphanagesMap() {
   });
  }
 
+  
+
   function handleSelectImages(event: ChangeEvent<HTMLInputElement>) {
     if (!event.target.files) {
       return;
@@ -69,7 +71,7 @@ export default function OrphanagesMap() {
 
     await api.post('orphanages', data); 
 
-    alert("Cadastro realizado com sucesso!");
+    alert('Cadastro realizado com sucesso!');
 
     history.push('/app');
   }
