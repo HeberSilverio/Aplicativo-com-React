@@ -62,6 +62,7 @@ export default function OrphanagesMap() {
     data.append('about', about);
     data.append('latitude', String(latitude));
     data.append('longitude', String(longitude));
+    data.append('instructions', instructions);
     data.append('opening_hours', opening_hours);
     data.append('open_on_weekends', String(open_on_weekends));
         
@@ -86,7 +87,7 @@ export default function OrphanagesMap() {
             <legend>Dados</legend>
 
             <Map 
-              center={[-16.6926552,-49.2942842,]} 
+              center={[-16.6970741,-49.2964299,]} 
               style={{ width: '100%', height: 280 }}
               zoom={15}
               onclick={handleMapClick}
