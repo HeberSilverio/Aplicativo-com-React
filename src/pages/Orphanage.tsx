@@ -114,13 +114,13 @@ export default function Orphanage() {
                  <div className="open-on-weekends">
                  <FiInfo size={32} color="#39CC83" />
                  Atendemos <br />
-                 fim de semana
+                 nos finais de semana
                </div>
               ) : (
                 <div className="open-on-weekends dont-open">
                 <FiInfo size={32} color="#FF669D" />
                 Não atendemos <br />
-                fim de semana
+                no final de semana
               </div>
               ) }
             </div>
@@ -128,7 +128,7 @@ export default function Orphanage() {
            {/* <button type="button" className="contact-button">
               <FaWhatsapp size={20} color="#FFF" />
               Entrar em contato
-            </button> */}
+            </button> */} ativar posteriormente
           </div>
         </div>
       </main>

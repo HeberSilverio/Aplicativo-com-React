@@ -33,9 +33,7 @@ export default function OrphanagesMap() {
   });
  }
 
-  
-
-  function handleSelectImages(event: ChangeEvent<HTMLInputElement>) {
+    function handleSelectImages(event: ChangeEvent<HTMLInputElement>) {
     if (!event.target.files) {
       return;
     }
@@ -162,7 +160,7 @@ export default function OrphanagesMap() {
             </div>
 
             <div className="input-block">
-              <label htmlFor="opening_hours">Horário de funcionamento</label>
+              <label htmlFor="opening_hours">Horários de funcionamento</label>
               <input 
               id="opening_hours" 
               value={opening_hours} 
